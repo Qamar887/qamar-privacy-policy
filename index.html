@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qamar - Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(22, 33, 62, 0.95));
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #4a7c59;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            color: #4a7c59;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(74, 124, 89, 0.3);
+        }
+
+        .subtitle {
+            color: #9ca3af;
+            font-size: 1.1rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, rgba(74, 124, 89, 0.1), rgba(74, 124, 89, 0.05));
+            border-left: 4px solid #4a7c59;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .intro-box p {
+            color: #d0d0d0;
+            font-size: 1.05rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(74, 124, 89, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            color: #4a7c59;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2::before {
+            content: "✦";
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: #7ac989;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            color: #d0d0d0;
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: #d0d0d0;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            padding-left: 0.5rem;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-item {
+            background: rgba(74, 124, 89, 0.1);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid #4a7c59;
+            text-align: center;
+        }
+
+        .feature-item strong {
+            color: #4a7c59;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(74, 124, 89, 0.2), rgba(122, 201, 137, 0.1));
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            color: #7ac989;
+            font-weight: 500;
+        }
+
+        .data-storage {
+            background: linear-gradient(135deg, rgba(74, 124, 89, 0.15), rgba(74, 124, 89, 0.05));
+            border: 1px solid #4a7c59;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .data-storage h3 {
+            color: #4a7c59;
+            margin-top: 0;
+        }
+
+        footer {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(22, 33, 62, 0.95));
+            border-top: 2px solid #4a7c59;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+
+        .contact-info {
+            background: rgba(74, 124, 89, 0.1);
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            main {
+                padding: 0 1rem;
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+        }
+
+        a {
+            color: #7ac989;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #4a7c59;
+            text-decoration: underline;
+        }
+
+        .last-updated {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">☪️</div>
+            <h1>Qamar Privacy Policy</h1>
+            <p class="subtitle">Your Islamic Companion Discord Bot</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="intro-box">
+            <p>
+                Welcome to Qamar, your dedicated Islamic companion bot for Discord. We are committed to protecting your privacy and being transparent about how we handle your data. This privacy policy explains what information we collect, how we use it, and your rights.
+            </p>
+        </div>
+
+        <section>
+            <h2>About Qamar</h2>
+            <p>
+                Qamar is a Discord bot designed to enrich your Islamic experience with features including:
+            </p>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <strong>🕌 Prayer Times</strong>
+                    Daily prayer schedules
+                </div>
+                <div class="feature-item">
+                    <strong>📖 Quran Verses</strong>
+                    Sacred Quranic content
+                </div>
+                <div class="feature-item">
+                    <strong>📿 Dhikr Counter</strong>
+                    Track your remembrance
+                </div>
+                <div class="feature-item">
+                    <strong>⏰ Reminders</strong>
+                    Important notifications
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Information We Collect</h2>
+            
+            <h3>User-Provided Information</h3>
+            <ul>
+                <li><strong>Discord User ID</strong> - Used to identify and personalize your experience</li>
+                <li><strong>Location</strong> - Stored only when you voluntarily set it for prayer time calculations</li>
+                <li><strong>Prayer Time Preferences</strong> - Your selected calculation method and time adjustments</li>
+                <li><strong>Dhikr Counter Data</strong> - Your personal dhikr tracking and counters</li>
+                <li><strong>Reminder Preferences</strong> - Commands you've set up for notifications</li>
+            </ul>
+
+            <h3>Automatically Collected Information</h3>
+            <ul>
+                <li>Timestamps of bot interactions</li>
+                <li>Commands executed (for improvement purposes only)</li>
+                <li>Server/Guild ID (only when bot is invited)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Data Storage & Security</h2>
+            
+            <p>
+                We take data security seriously. Here's how your information is handled:
+            </p>
+
+            <div class="data-storage">
+                <h3>Local Storage Format</h3>
+                <p>
+                    User data is stored in a <span class="highlight">users.json</span> file maintained locally on our secure servers. This file contains:
+                </p>
+                <ul>
+                    <li>Your Discord User ID (non-personally identifiable)</li>
+                    <li>Your configured location for prayer times</li>
+                    <li>Your prayer time preferences</li>
+                    <li>Dhikr counter statistics</li>
+                    <li>Reminder configurations</li>
+                </ul>
+                <p style="margin-top: 1rem; color: #7ac989;">
+                    <strong>Important:</strong> This data is never shared, exported, or used for any purpose other than providing Qamar's services.
+                </p>
+            </div>
+
+            <h3>Encryption & Protection</h3>
+            <ul>
+                <li>Data is stored securely with appropriate access controls</li>
+                <li>Only the bot owner can access the users.json file</li>
+                <li>Regular backups ensure data integrity</li>
+                <li>No unauthorized third parties have access to your information</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Third-Party APIs</h2>
+            
+            <p>
+                Qamar integrates with the following external services to provide its features:
+            </p>
+
+            <h3>🕌 Aladhan API</h3>
+            <p>
+                Used for retrieving accurate <span class="highlight">prayer times</span> based on your location. 
+            </p>
+            <ul>
+                <li>Only your location (when you set it) is sent to this API</li>
+                <li>Prayer time data is provided in real-time</li>
+                <li>No personal identifiers are sent</li>
+            </ul>
+
+            <h3>📖 AlQuran Cloud API</h3>
+            <p>
+                Provides authentic <span class="highlight">Quran verses</span> and Islamic content.
+            </p>
+            <ul>
+                <li>No personal data is shared with this service</li>
+                <li>Only requests for Quranic content are made</li>
+                <li>All content is retrieved publicly available information</li>
+            </ul>
+
+            <p style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(74, 124, 89, 0.2);">
+                <strong>Note:</strong> These are well-established Islamic APIs with their own privacy policies. We recommend reviewing them at their respective websites.
+            </p>
+        </section>
+
+        <section>
+            <h2>How We Use Your Data</h2>
+            
+            <ul>
+                <li><strong>Prayer Times:</strong> Display accurate prayer schedules based on your location</li>
+                <li><strong>Quran Verses:</strong> Retrieve and share Islamic content when requested</li>
+                <li><strong>Dhikr Counter:</strong> Track and maintain your personal dhikr statistics</li>
+                <li><strong>Reminders:</strong> Send you notifications based on your configured preferences</li>
+                <li><strong>Bot Improvement:</strong> Anonymized usage patterns help us improve the bot</li>
+            </ul>
+
+            <p style="margin-top: 1.5rem; background: rgba(74, 124, 89, 0.1); padding: 1rem; border-radius: 6px; border-left: 3px solid #4a7c59;">
+                ✓ We <strong>never</strong> sell, trade, or share your data with third parties<br>
+                ✓ Your data is used exclusively for providing Qamar's services<br>
+                ✓ We don't use your information for advertising or marketing
+            </p>
+        </section>
+
+        <section>
+            <h2>Your Rights & Control</h2>
+            
+            <p>You have complete control over your data:</p>
+            
+            <h3>View Your Data</h3>
+            <p>Use the `/data` command to see what information Qamar has stored about you.</p>
+
+            <h3>Delete Your Data</h3>
+            <p>Use the `/delete-data` command to completely remove all your information from our systems. This action is permanent and cannot be undone.</p>
+
+            <h3>Update Your Information</h3>
+            <p>You can update your location, preferences, and settings at any time using Qamar's configuration commands.</p>
+
+            <h3>Opt-Out of Reminders</h3>
+            <p>Disable any reminder or notification features you don't wish to use.</p>
+        </section>
+
+        <section>
+            <h2>Data Retention</h2>
+            
+            <p>
+                We retain your data only as long as you use Qamar. Here's our retention policy:
+            </p>
+            
+            <ul>
+                <li><strong>Active Users:</strong> Data is maintained as long as you use the bot</li>
+                <li><strong>Inactive Accounts:</strong> Data may be removed after 6 months of inactivity (with prior notice)</li>
+                <li><strong>On Request:</strong> You can request immediate deletion at any time using the `/delete-data` command</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Children's Privacy</h2>
+            
+            <p>
+                Qamar is not intended for children under 13 years of age. We do not knowingly collect information from children under 13. If we become aware that a child under 13 has provided us with personal information, we will immediately delete such information and terminate the child's account.
+            </p>
+        </section>
+
+        <section>
+            <h2>Security Measures</h2>
+            
+            <p>We implement comprehensive security measures to protect your data:</p>
+            
+            <ul>
+                <li>Secure local storage with restricted access</li>
+                <li>Regular security audits and updates</li>
+                <li>Discord API security best practices</li>
+                <li>No storage of sensitive data (passwords, tokens, etc.)</li>
+                <li>Immediate response to any security incidents</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Contact & Support</h2>
+            
+            <div class="contact-info">
+                <p>
+                    If you have questions about this privacy policy or concerns about your data, please reach out:
+                </p>
+                <ul style="margin-left: 0; list-style: none;">
+                    <li>📧 <strong>Email:</strong> privacy@qamar-bot.com</li>
+                    <li>💬 <strong>Discord:</strong> Join our support server for assistance</li>
+                    <li>🐙 <strong>GitHub:</strong> <a href="https://github.com/Qamar887" target="_blank">github.com/Qamar887</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Changes to This Policy</h2>
+            
+            <p>
+                We may update this privacy policy from time to time. When we make material changes, we will notify users through:
+            </p>
+            
+            <ul>
+                <li>A notice on our Discord bot</li>
+                <li>Updates on this website</li>
+                <li>Direct messages to active users (if major changes occur)</li>
+            </ul>
+
+            <p>
+                Your continued use of Qamar after changes indicates your acceptance of the updated policy.
+            </p>
+        </section>
+
+        <section>
+            <h2>Legal Compliance</h2>
+            
+            <p>
+                This privacy policy complies with:
+            </p>
+            
+            <ul>
+                <li>Discord's Terms of Service and Developer Policy</li>
+                <li>GDPR (General Data Protection Regulation) requirements</li>
+                <li>General privacy and data protection best practices</li>
+            </ul>
+        </section>
+
+        <div class="last-updated">
+            Last Updated: May 16, 2026
+        </div>
+    </main>
+
+    <footer>
+        <p>🌙 Qamar - Your Islamic Companion Bot</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Privacy Policy © 2026. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Generate random stars
+        function generateStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        generateStars();
+    </script>
+</body>
+</html>
