@@ -294,19 +294,27 @@
             <div class="feature-list">
                 <div class="feature-item">
                     <strong>🕌 Prayer Times</strong>
-                    Daily prayer schedules
+                    Accurate daily prayer schedules
                 </div>
                 <div class="feature-item">
                     <strong>📖 Quran Verses</strong>
-                    Sacred Quranic content
+                    Random Quranic verses with translations
                 </div>
                 <div class="feature-item">
                     <strong>📿 Dhikr Counter</strong>
-                    Track your remembrance
+                    Track your remembrance of Allah
                 </div>
                 <div class="feature-item">
                     <strong>⏰ Reminders</strong>
-                    Important notifications
+                    Custom reminders for important tasks
+                </div>
+                <div class="feature-item">
+                    <strong>🙏 Islamic Duas</strong>
+                    Random duas for various occasions
+                </div>
+                <div class="feature-item">
+                    <strong>🧭 Qiblah Direction</strong>
+                    Direction towards the Kaaba
                 </div>
             </div>
         </section>
@@ -317,17 +325,16 @@
             <h3>User-Provided Information</h3>
             <ul>
                 <li><strong>Discord User ID</strong> - Used to identify and personalize your experience</li>
-                <li><strong>Location</strong> - Stored only when you voluntarily set it for prayer time calculations</li>
-                <li><strong>Prayer Time Preferences</strong> - Your selected calculation method and time adjustments</li>
-                <li><strong>Dhikr Counter Data</strong> - Your personal dhikr tracking and counters</li>
-                <li><strong>Reminder Preferences</strong> - Commands you've set up for notifications</li>
+                <li><strong>Location</strong> - Stored only when you voluntarily set it using /setlocation for prayer time calculations</li>
+                <li><strong>Dhikr Counter Data</strong> - Your personal dhikr tracking count (stored in memory during bot sessions)</li>
+                <li><strong>Reminder Preferences</strong> - Reminders you set with the /remind command</li>
             </ul>
 
             <h3>Automatically Collected Information</h3>
             <ul>
                 <li>Timestamps of bot interactions</li>
-                <li>Commands executed (for improvement purposes only)</li>
-                <li>Server/Guild ID (only when bot is invited)</li>
+                <li>Commands executed (for logging and improvement purposes)</li>
+                <li>Server/Guild IDs where the bot is active</li>
             </ul>
         </section>
 
@@ -341,19 +348,25 @@
             <div class="data-storage">
                 <h3>Local Storage Format</h3>
                 <p>
-                    User data is stored in a <span class="highlight">users.json</span> file maintained locally on our secure servers. This file contains:
+                    User data is stored in a <span class="highlight">users.json</span> file maintained on our secure servers. This file contains:
                 </p>
                 <ul>
-                    <li>Your Discord User ID (non-personally identifiable)</li>
+                    <li>Your Discord User ID</li>
                     <li>Your configured location for prayer times</li>
-                    <li>Your prayer time preferences</li>
-                    <li>Dhikr counter statistics</li>
-                    <li>Reminder configurations</li>
                 </ul>
                 <p style="margin-top: 1rem; color: #7ac989;">
                     <strong>Important:</strong> This data is never shared, exported, or used for any purpose other than providing Qamar's services.
                 </p>
             </div>
+
+            <h3>In-Memory Data</h3>
+            <p>
+                The following data is stored temporarily in the bot's memory and is lost when the bot restarts:
+            </p>
+            <ul>
+                <li><strong>Dhikr Counter:</strong> Your SubhanAllah count resets when the bot restarts</li>
+                <li><strong>Reminders:</strong> Active reminders are processed and removed after being sent</li>
+            </ul>
 
             <h3>Encryption & Protection</h3>
             <ul>
@@ -373,22 +386,24 @@
 
             <h3>🕌 Aladhan API</h3>
             <p>
-                Used for retrieving accurate <span class="highlight">prayer times</span> based on your location. 
+                Used for retrieving accurate <span class="highlight">prayer times</span> based on your location.
             </p>
             <ul>
-                <li>Only your location (when you set it) is sent to this API</li>
+                <li>Your location (when you set it) is sent to this API</li>
                 <li>Prayer time data is provided in real-time</li>
-                <li>No personal identifiers are sent</li>
+                <li>No personal identifiers beyond the location are sent</li>
+                <li>API endpoint: <code>http://api.aladhan.com/v1/timingsByCity</code></li>
             </ul>
 
             <h3>📖 AlQuran Cloud API</h3>
             <p>
-                Provides authentic <span class="highlight">Quran verses</span> and Islamic content.
+                Provides authentic <span class="highlight">Quran verses</span> with translations and audio recitations.
             </p>
             <ul>
                 <li>No personal data is shared with this service</li>
-                <li>Only requests for Quranic content are made</li>
-                <li>All content is retrieved publicly available information</li>
+                <li>Only requests for random Quranic verses are made</li>
+                <li>Includes Arabic text, English translations, and audio recitation links</li>
+                <li>API endpoints: <code>https://api.alquran.cloud/v1/</code></li>
             </ul>
 
             <p style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(74, 124, 89, 0.2);">
@@ -400,18 +415,40 @@
             <h2>How We Use Your Data</h2>
             
             <ul>
-                <li><strong>Prayer Times:</strong> Display accurate prayer schedules based on your location</li>
-                <li><strong>Quran Verses:</strong> Retrieve and share Islamic content when requested</li>
-                <li><strong>Dhikr Counter:</strong> Track and maintain your personal dhikr statistics</li>
-                <li><strong>Reminders:</strong> Send you notifications based on your configured preferences</li>
-                <li><strong>Bot Improvement:</strong> Anonymized usage patterns help us improve the bot</li>
+                <li><strong>Prayer Times:</strong> Display accurate prayer schedules based on your set location using the Aladhan API</li>
+                <li><strong>Quran Verses:</strong> Retrieve and share random Quranic content when requested via /quran</li>
+                <li><strong>Dhikr Counter:</strong> Track and maintain your personal dhikr statistics during bot sessions</li>
+                <li><strong>Reminders:</strong> Send you notifications based on your configured reminders using /remind</li>
+                <li><strong>Prayer Notifications:</strong> Notify you when prayer times are near using /pingwhensalah</li>
+                <li><strong>Bot Improvement:</strong> Anonymized command usage helps us improve the bot's features</li>
             </ul>
 
             <p style="margin-top: 1.5rem; background: rgba(74, 124, 89, 0.1); padding: 1rem; border-radius: 6px; border-left: 3px solid #4a7c59;">
                 ✓ We <strong>never</strong> sell, trade, or share your data with third parties<br>
                 ✓ Your data is used exclusively for providing Qamar's services<br>
-                ✓ We don't use your information for advertising or marketing
+                ✓ We don't use your information for advertising or marketing<br>
+                ✓ We don't collect or store passwords, tokens, or sensitive credentials
             </p>
+        </section>
+
+        <section>
+            <h2>Commands & Features</h2>
+            
+            <h3>Available Commands</h3>
+            <ul>
+                <li><strong>/salam</strong> - Say Salam to the bot (Wa Alaikum Assalam response)</li>
+                <li><strong>/remind</strong> - Set a custom reminder with duration (e.g., 5m, 2h, 1d)</li>
+                <li><strong>/randomdua</strong> - Get a random dua with Arabic and English translation</li>
+                <li><strong>/qiblah</strong> - Get the qiblah direction towards the Kaaba</li>
+                <li><strong>/dhikircounter</strong> - Start the interactive dhikr counter with SubhanAllah button</li>
+                <li><strong>/setlocation</strong> - Set your location for prayer time calculations</li>
+                <li><strong>/prayertimes</strong> - Get prayer times for your set location</li>
+                <li><strong>/pingwhensalah</strong> - Get notified when the next prayer time is near</li>
+                <li><strong>/quran</strong> - Get a random Quran verse with audio recitation</li>
+                <li><strong>/help</strong> - Display all available commands</li>
+                <li><strong>/invite</strong> - Get the bot's invite link</li>
+                <li><strong>/ping</strong> - Check the bot's latency</li>
+            </ul>
         </section>
 
         <section>
@@ -420,29 +457,31 @@
             <p>You have complete control over your data:</p>
             
             <h3>View Your Data</h3>
-            <p>Use the `/data` command to see what information Qamar has stored about you.</p>
+            <p>You can view your stored location and other settings by using the bot's configuration commands.</p>
 
             <h3>Delete Your Data</h3>
-            <p>Use the `/delete-data` command to completely remove all your information from our systems. This action is permanent and cannot be undone.</p>
+            <p>You can manually delete your location setting, which will remove your data from users.json. Contact the bot owner for complete data removal requests.</p>
 
             <h3>Update Your Information</h3>
-            <p>You can update your location, preferences, and settings at any time using Qamar's configuration commands.</p>
+            <p>You can update your location at any time using the /setlocation command with a new location.</p>
 
-            <h3>Opt-Out of Reminders</h3>
-            <p>Disable any reminder or notification features you don't wish to use.</p>
+            <h3>Opt-Out of Features</h3>
+            <p>Simply don't use the features you don't want. For example, if you don't want prayer time notifications, don't use /setlocation or /pingwhensalah.</p>
         </section>
 
         <section>
             <h2>Data Retention</h2>
             
             <p>
-                We retain your data only as long as you use Qamar. Here's our retention policy:
+                Here's our data retention policy:
             </p>
             
             <ul>
-                <li><strong>Active Users:</strong> Data is maintained as long as you use the bot</li>
-                <li><strong>Inactive Accounts:</strong> Data may be removed after 6 months of inactivity (with prior notice)</li>
-                <li><strong>On Request:</strong> You can request immediate deletion at any time using the `/delete-data` command</li>
+                <li><strong>Location Data (users.json):</strong> Stored indefinitely until you remove it or request deletion</li>
+                <li><strong>Dhikr Counter:</strong> Stored in memory during bot session; resets when bot restarts</li>
+                <li><strong>Reminders:</strong> Deleted after being sent or completed</li>
+                <li><strong>Command Logs:</strong> Stored temporarily for debugging and improvement</li>
+                <li><strong>On Request:</strong> Contact the bot owner for data deletion requests</li>
             </ul>
         </section>
 
@@ -450,7 +489,7 @@
             <h2>Children's Privacy</h2>
             
             <p>
-                Qamar is not intended for children under 13 years of age. We do not knowingly collect information from children under 13. If we become aware that a child under 13 has provided us with personal information, we will immediately delete such information and terminate the child's account.
+                Qamar is not intended for children under 13 years of age. We do not knowingly collect information from children under 13. If we become aware that a child under 13 has provided us with personal information, we will immediately request deletion of such information.
             </p>
         </section>
 
@@ -460,10 +499,10 @@
             <p>We implement comprehensive security measures to protect your data:</p>
             
             <ul>
-                <li>Secure local storage with restricted access</li>
-                <li>Regular security audits and updates</li>
+                <li>Secure local storage with restricted file access</li>
                 <li>Discord API security best practices</li>
                 <li>No storage of sensitive data (passwords, tokens, etc.)</li>
+                <li>HTTPS/TLS encryption for all external API communications</li>
                 <li>Immediate response to any security incidents</li>
             </ul>
         </section>
@@ -476,8 +515,7 @@
                     If you have questions about this privacy policy or concerns about your data, please reach out:
                 </p>
                 <ul style="margin-left: 0; list-style: none;">
-                    <li>📧 <strong>Email:</strong> privacy@qamar-bot.com</li>
-                    <li>💬 <strong>Discord:</strong> Join our support server for assistance</li>
+                    <li>💬 <strong>Discord Bot:</strong> Use the /help command or contact the server admin</li>
                     <li>🐙 <strong>GitHub:</strong> <a href="https://github.com/Qamar887" target="_blank">github.com/Qamar887</a></li>
                 </ul>
             </div>
@@ -491,9 +529,9 @@
             </p>
             
             <ul>
-                <li>A notice on our Discord bot</li>
                 <li>Updates on this website</li>
-                <li>Direct messages to active users (if major changes occur)</li>
+                <li>Announcements in the Discord bot</li>
+                <li>Updates to the bot's welcome message</li>
             </ul>
 
             <p>
